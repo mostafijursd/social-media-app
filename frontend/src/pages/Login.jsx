@@ -2,9 +2,12 @@ import React, { useState } from 'react'
 import {FaMediumM} from 'react-icons/fa'
 import{useDispatch}  from 'react-redux'
 import {TextInput,Loading,CustomButton} from '../components'
-
+import { FaShareAlt } from "react-icons/fa"
+import { ImConnection } from "react-icons/im"
+import { AiOutlineInteraction } from "react-icons/ai";
 import {Link} from 'react-router-dom'
 import {useForm} from 'react-hook-form'
+import { bgImg } from '../assets'
 function Login() {
   const {
 register,
@@ -13,6 +16,11 @@ formState:{errors},
   }=useForm(
   {  mode:"onChange",
   });
+
+const onSubmit=async(data)=>{
+  
+}
+
   const[errMsg,setErrMsg]=useState("");
   const[isSubmitting,setIsSubmitting]=useState(false);
   const dispatch=useDispatch()
@@ -22,7 +30,7 @@ formState:{errors},
 <div className='w-full md:w-2/3 h-fit lg:h-full 2xl:h-5/6 py-8 lg:py-0 flex bg-primary rounded-xl overflow-hidden shadow-xl'>
 
   {/* lift */}
- <div className='w-full lg:w=1/2 h-full p-10 2xl:px-20 flex flex-col justify-center'>
+ <div className='w-full lg:w-1/2 h-full p-10 2xl:px-20 flex flex-col justify-center'>
 
 <div className='w-full flex gap-2 items-center mb-6'>
   <div  className='p-2 bg-[#065ad8] rounded-full text-white '>
@@ -32,7 +40,7 @@ formState:{errors},
 </div>
 <p className='text-ascent-1 text-base font-semibold'>Log in to your account</p>
  <span className=' text-ascent-2 text-sm mt-2'>Welcome back</span>
- <form className='py-8 flex flex-col gap-5'>
+ <form className='py-8 flex flex-col gap-5'  onSubmit={handleSubmit(onSubmit)}>
 
   <TextInput  
    name="email"
@@ -83,7 +91,7 @@ errMsg?.status =="failed" ? "text-[#f64949fe]" :"text-[#2ba150fe]"
           text-sm font-medium text-white outline-none`}
           title='Login'/>
       
-      }
+      } 
  </form>
 
  <p  className='text-ascent-2 text-sm text-center'>
@@ -97,8 +105,33 @@ errMsg?.status =="failed" ? "text-[#f64949fe]" :"text-[#2ba150fe]"
  </div>
 
   {/* rigth */}
+
+<div  className='hidden w-1/2 h-full lg:flex flex-col items-center justify-center bg-blue'>
+<div  className='relative w-full flex items-center justify-center'>
+
+<img src={bgImg}  className='w-48 2xl:w-64 h-48 2xl:h-64 rounded-full object-cover' />
+
+<div className='absolute flex items-center gap-1 bg-white right-10 top-10 py-2 px-5 rounded-full'>
+<FaShareAlt  size={14}/>
+<span  className='text-xs font-medium'>Share</span>
 </div>
-    </div>
+<div className='absolute flex items-center gap-1 bg-white left-10 top-10 py-2 px-5 rounded-full'>
+<ImConnection  size={14}/>
+<span  className='text-xs font-medium'>Connect</span>
+</div>
+<div className='absolute flex items-center gap-1 bg-white left-12  py-2 px-5 bottom-6 rounded-full'>
+<AiOutlineInteraction  size={14}/>
+<span  className='text-xs font-medium'>Interact</span>
+</div>
+
+</div>
+<div  className='mt-16 text-white'>
+<p className='text-white text-base'>Conncet with friends & have share for fun</p>
+<span className='text-sm text-white/80'>Sgare mempries friends and the world</span>
+</div>
+</div>
+</div>
+ </div>
   )
 }
 

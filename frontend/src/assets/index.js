@@ -1,2 +1,3 @@
-import logo from './image'
-export { logo };
+import bgImg from './bgImg.jpg'
+import RegImg from './RegImg.jpg'
+export { bgImg, RegImg };
