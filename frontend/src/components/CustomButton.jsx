@@ -5,7 +5,7 @@ function CustomButton({title,containerStyles,iconRight,type,onClick}) {
     
 <button  onClick={onClick}
         type={type || "button"}
-        className={`inline-flex items-center text-base rounded-lg  ${containerStyles}`}
+        className={`inline-flex items-center text-base rounded-lg   ${containerStyles}`}
 
 >
 {title}

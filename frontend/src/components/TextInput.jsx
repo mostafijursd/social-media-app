@@ -18,7 +18,7 @@ ref
            placeholder={placegolder}
            ref={ref}
            className={`bg-secondary rounded-full border border-[#66666690] outline-none text-sm
-           text-ascent-1 px-4 py-3 placeholder:text-[#666] ${styles}`}
+           text-ascent-1 px-4 py-3 placeholder:text-[#666]  ${styles}`}
            {...register}
            aria-invalid={error ? "true" :"false"}
     />
