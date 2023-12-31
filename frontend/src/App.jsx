@@ -8,7 +8,7 @@ function Layout() {
   
   const location=useLocation();
 
-  console.log(user);
+  
   return user?.token ? (
     <Outlet />
   ):(

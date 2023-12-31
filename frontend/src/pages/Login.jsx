@@ -60,6 +60,7 @@ const onSubmit=async(data)=>{
    lebal="password"
    placegolder="password"
    type="password"
+   
    register={
     register("password",{
       required:"password is required "

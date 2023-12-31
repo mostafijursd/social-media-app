@@ -9,7 +9,7 @@ import TextInput from './TextInput'
 import CustomButton from './CustomButton'
 import {useForm} from 'react-hook-form'
 import { SetTheme } from '../redux/themeSlice';
-// import { Logout } from '../redux/userSlice';
+import { Logout } from '../redux/userSlice';
 function TopBar() {
      const{theme}=useSelector((state)=>state.theme)
      const {user}=useSelector((state)=>state.user)
@@ -59,7 +59,7 @@ function TopBar() {
 
 <CustomButton 
            title='Log Out'
-        //    onClick={()=>dispatch(Logout())}
+           onClick={()=>dispatch(Logout())}
            containerStyles=' text-sm px-4 md:px-6 text-ascent-1  py-1  rounded-full md:py-2 border border-[#666]'
            />
 </div>

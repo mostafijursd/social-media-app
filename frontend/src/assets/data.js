@@ -124,6 +124,29 @@ export const requests = [{
     },
 ];
 
+export const friendRequest = [{
+
+        _id: "64df3aec4180b81adfe41d32",
+        firstName: "John",
+        lastName: "Bruce",
+        email: "john@gmail.com",
+        profileUrl: "https://res.cloudinary.com/djs3wu5bg/image/upload/v1683874470/cld-sample.jpg",
+    },
+    {
+        _id: "64df39704180b81adfe41d0b",
+        firstName: "James",
+        lastName: "Jackson",
+        location: "Mumbai, India",
+        profession: "Full-Stack Developer",
+    },
+    {
+        _id: "64df424b4a4c0d47b5369f65",
+        firstName: "User",
+        lastName: "One",
+        email: "user!@gmail.com",
+    },
+
+];
 export const suggest = [{
         _id: "64df3aec4180b81adfe41d32",
         ...friends[0],
