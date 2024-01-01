@@ -124,6 +124,7 @@ export const requests = [{
     },
 ];
 
+
 export const friendRequest = [{
 
         _id: "64df3aec4180b81adfe41d32",
