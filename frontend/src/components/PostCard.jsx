@@ -17,11 +17,13 @@ const CommentForm=({user,id ,replyAt,getComments})=>{
     handleSubmit,
     reset,
     formState:{errors}
-  }=useForm({mode:'onChange'})
+  }=useForm({
+    mode:"onChange"})
 
   const onSubmit=async(data)=>{}
 return(
-<form  onSubmit={handleSubmit(onSubmit)}  className='w-full border-b border-[#66666645]'>
+<form  onSubmit={handleSubmit(onSubmit)} 
+ className='w-full border-b border-[#66666645]'>
 
 <div className='w-full flex items-center gap-2 py-4'>
 <img src={user?.profileUrl ?? NoProfile} alt="User Image" className='w-10 h-10 rounded-full object-cover' 
@@ -92,12 +94,7 @@ function PostCard({post,user,deletePost,likePost}) {
 }
 </div>
 <div className='mt-4 flex justify-between items-center px-3 py-2 text-ascent-2 text-base border-t border-[#66666645]'>
-<p  className='flex gap-2 items-center text-base cursor-pointer'
-   onClick={()=>{
-setShowComments(showComments ===post._id ? null :post._id);
-getComments(post?._id)
-
-   }}
+<p  className='flex gap-2 items-center text-base cursor-pointer' 
 >
 
 {
@@ -106,7 +103,11 @@ getComments(post?._id)
 {post?.likes?.legth} Likes
   
 </p>
-<p className='flex gap-2 items-center text-base cursor-pointer' >
+<p className='flex gap-2 items-center text-base cursor-pointer'  onClick={()=>{
+    setShowComments(showComments ===post._id ? null : post._id);
+    getComments(post?._id)
+
+   }}  >
 <BiComment size={20}/>
 {post?.comments?.length} Comments
 </p>
