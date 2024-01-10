@@ -1,7 +1,7 @@
 import React from 'react'
 import { NoProfile } from '../assets'
 import { Link } from 'react-router-dom'
-function FriendsCard({friends}) {
+function FriendsCard({friends}) { 
   return (
     <div>
 <div  className='w-full bg-primary shadow-sm rounded-lg px-6 py-5'>
@@ -12,7 +12,7 @@ function FriendsCard({friends}) {
     <div className='w-full flex flex-col gap-4 pt-4'>
 {
 
-    friends.map((friend)=>(
+    friends?.map((friend)=>(
         <Link to={"./profile/"+friend?._id}  key={friend?._id}
         
             className='w-full flex gap-4 items-center cursor-pointer'
