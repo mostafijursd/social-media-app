@@ -51,7 +51,7 @@ const onSubmit=async(data)=>{
     register("email",{
       required:"Email Address is required "
     })}
-    styles='w-full rounder-full'
+    styles='w-full rounded-full'
     lebalStyles='ml-2'
     error={errors.email ? errors.email.message :""}
   />
@@ -65,7 +65,7 @@ const onSubmit=async(data)=>{
     register("password",{
       required:"password is required "
     })}
-    styles='w-full rounder-full'
+    styles='w-full rounded-full'
     lebalStyles='ml-2'
     error={errors.email ? errors.password?.message :""}
   />

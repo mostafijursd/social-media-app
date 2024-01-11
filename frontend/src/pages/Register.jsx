@@ -56,7 +56,7 @@ const onSubmit=async(data)=>{
     register("FirstName",{
       required:"First Name is required "
     })}
-    styles='w-full '
+    styles='w-full  rounded-full'
     
     error={errors.FirstName ? errors.FirstName.message :""}
   />
@@ -70,7 +70,7 @@ const onSubmit=async(data)=>{
     register("lastName",{
       required:" last Name is required "
     })}
-    styles='w-full '
+    styles='w-full rounded-full '
     
     error={errors.lastName ? errors.lastName.message :""}
   />
@@ -84,7 +84,7 @@ const onSubmit=async(data)=>{
     register("email",{
       required:"Email Address is required "
     })}
-    styles='w-full '
+    styles='w-full rounded-full '
     
     error={errors.email ? errors.email.message :""}
   />
@@ -97,7 +97,7 @@ const onSubmit=async(data)=>{
     register("password",{
       required:"password is required "
     })}
-    styles='w-full rounder-full'
+    styles='w-full rounded-full'
     lebalStyles='ml-2'
     error={errors.email ? errors.password?.message :""}
   />
@@ -115,7 +115,7 @@ return "password do no match";
         }
        }
     })}
-    styles='w-full '
+    styles='w-full rounded-full '
     
     error={errors.cPassword && errors.cPassword.type=== "validate" ? errors.cPassword?.message : ""}
   />

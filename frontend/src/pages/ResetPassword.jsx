@@ -38,7 +38,7 @@ function ResetPassword() {
     register("email",{
       required:"Email Address is required "
     })}
-    styles='w-full '
+    styles='w-full rounded-full '
     
     error={errors.email ? errors.email.message :""}
   />
