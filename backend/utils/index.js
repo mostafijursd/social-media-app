@@ -1,5 +1,4 @@
 import bcrypt from 'bcryptjs';
-
 import JWT from 'jsonwebtoken';
 
 export const hashString = async(useValue) => {

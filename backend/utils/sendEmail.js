@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import { v4 as uuidv4 } from "uuid";
-import { hashString } from ".";
+import { hashString } from "./index.js";
 import Verification from "../models/emailVerification.js";
 
 dotenv.config();
@@ -49,14 +49,17 @@ style='font-family: Arial, sans-serif; font-size: 20px; color: #333; background-
 </div>`
     };
 
+
     try {
         const hashedToken = await hashString(token);
-        const newVerifiedEmail = await Verification.crreate({
+
+        const newVerifiedEmail = await Verification.create({
             userId: _id,
             token: hashedToken,
-            crearedAt: Date.now(),
+            createdAt: Date.now(),
             expiresAt: Date.now() + 3600000,
         });
+
         if (newVerifiedEmail) {
             transporter
                 .sendMail(mailOptions)
@@ -70,7 +73,7 @@ style='font-family: Arial, sans-serif; font-size: 20px; color: #333; background-
                     console.log(err);
                     res.status(404).json({ message: "Something went wrong" });
                 });
-        };
+        }
     } catch (error) {
         console.log(error);
         res.status(404).json({ message: "Sometiong went wrong" })
