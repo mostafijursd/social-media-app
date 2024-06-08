@@ -7,14 +7,15 @@ const errorMiddleware = (err, req, res, next) => {
         message: err,
     };
 
-    if (err || name === "ValidationError") {
-        defaultError.statusCode = 404;
+    if (err && err.name === "ValidationError") {
+        defaultError.statusCode = 400; // Typically, a 400 status code is more appropriate for validation errors.
 
-        defaultError.message = Object.values(err, errors)
-            .map((el) => el.message)
-            .join(",");
+        // Extracting and joining the error messages
+        defaultError.message = Object.values(err.errors)
+            .map(el => el.message)
+            .join(", ");
     }
-
+    console.log("error");
     //duplicate error
 
     if (err.code && err.code === 11000) {
@@ -30,4 +31,4 @@ const errorMiddleware = (err, req, res, next) => {
     });
 };
 
-export default errorMiddleware
+export default errorMiddleware;

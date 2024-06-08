@@ -66,7 +66,8 @@ export const login = async(req, res, next) => {
             return;
         }
         // compare password 
-        const isMatch = await compareString(password, user || password);
+        // const isMatch = await compareString(password, user ? .password);
+        const isMatch = user ? await compareString(password, user.password) : false;
 
         if (!isMatch) {
             next("Invalid email or password");
